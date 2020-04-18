@@ -1,9 +1,7 @@
 
 ## Initialize objects m and x
 ## makeCacheMatrix() creates an R object that stores a vector and its inverse. 
-## The second function, cacheSolve() requires an argument that is returned by makeCacheMatrix() 
-## in order to retrieve the inverse (by solve) from the cached value that is stored in the makeCacheMatrix() 
-## object's environment. So at the first time the invertation is calculated and then the value is taken out
+## So at the first time the invertation is calculated and then the value is taken out
 ## of the cache.
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -20,7 +18,10 @@ makeCacheMatrix <- function(x = matrix()) {
        getsolve = getsolve)
 }
 
-## Return a matrix that is the inverse of 'x'
+## The second function, cacheSolve(), return a matrix that is the inverse of 'x' and
+## requires an argument that is returned by makeCacheMatrix() 
+## in order to retrieve the inverse (by solve) from the cached value that is stored in the makeCacheMatrix() 
+## object's environment.
 
 cacheSolve <- function(x, ...) {
   m <- x$getsolve()
